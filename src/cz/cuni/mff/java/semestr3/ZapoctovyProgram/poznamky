@@ -1,0 +1,33 @@
+PARAMETRY
+-n ... pocet studentu - osetri zaporna cisla, zeptej se, kdyz chce vic nez 500 zadani
+-f ... nazev souboru, ze ktereho se uloha cte
+
+ZNACENI
+{{_nazevPromenne_:0:100:I/F}}
+nazev promenne, ktery bude uzivatel dale vyuzivat i pri vzorci, bude prave jeden char
+
+zadani vzorce v infixu se stejnym oznacenim promennych
+musim osetrit i ^, mozna sqrt, mozna cos, sin atd
+pi, e,
+
+
+PARSOVANI STROMECKU
+
+Zadany vyraz v infixu si potrebuju jen rozkouskovat a seradit do vyrazoveho stromu
+pri zapisu do zadani pro studenta potrebuji vzdycky jine cislo, musim tedy na cely strom volat to hodnota()
+Kdyz chci drzet jen referenci na koren stromu, musim dat asi to provedSe()?
+
+Strom by mel mit v listech ty promenne od uzivatele, ktere by se mely pri kazdem volani menit a taky by tam mel
+mit nejake konstantni vyrazy, ktere se menit nebudou
+
+
+
+NAHODNE HODNOTY V ROZMEZI
+Random rand = new Random();
+int value = rand.nextInt(50);
+This will give value from 0 to 49.
+
+For 1 to 50: rand.nextInt((max - min) + 1) + min;
+
+Source of some Java Random awesomeness.
+

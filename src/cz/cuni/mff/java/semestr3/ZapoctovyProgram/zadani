@@ -1,0 +1,20 @@
+> Program by mel od uzivatele ( asi ucitele) na vstup prijmout pocet
+> studentu, pro ktere bude zadani tvorit. Prijme i text ulohy (.. vlak
+> jede rychlosti X ...). Vzdy se prijme blok textu zadani, pak se zada
+> promenna, jaky ma mit rozsah atd., takhle se na vstupu prijme zadani
+> cele ulohy.
+>
+> Potom se na vstup zada i vzorec v infixu, podle ktereho program spocte
+> vysledek.
+>
+> Program vytvori stejne souboru, kolik bylo studentu. Vypise do nich text
+> ulohy, na misto promenne da nahodne cislo z predem urceneho intervalu.
+>
+> Do posledniho souboru s vysledky zapise ocekavany vysledek pro kontroolu
+> ucitele. Kazdy student by tak mel dostat stejny typ ulohy, jen s jinymi
+> hodnotami.
+
+OK, souhlasím s tématem.
+
+Program prosím udělejte tak, aby byl reálně použitelný, tj. bral ruzné
+parametry z příkazové řádky (zadání, počet studentů,...).
