@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44de570f-a98a-4d31-87cb-ca5d44844b49" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv02/SimpleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv02/TestIinf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv02/TesterInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv02/main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv01/ukol3rozsiritelnyShell/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv01/ukol3rozsiritelnyShell/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv01/ukol3rozsiritelnyShell/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv01/ukol3rozsiritelnyShell/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Java.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,24 +30,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv01/ukol3rozsiritelnyShell/main.java">
+        <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv02/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="88" column="25" lean-forward="true" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3451#3452#0" expanded="true" />
-                <element signature="e#3519#3520#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv01/ukol2textProcesor/main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="60" selection-end-column="26" />
+            <state relative-caret-position="395">
+              <caret line="47" column="17" lean-forward="true" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,10 +42,74 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv01/ukol3rozsiritelnyShell/Command.java">
+        <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv02/TesterInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv02/SimpleTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="792">
+              <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1070#1071#0" expanded="true" />
+                <element signature="e#1093#1094#0" expanded="true" />
+                <element signature="e#1171#1172#0" expanded="true" />
+                <element signature="e#1198#1199#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv02/TestIinf.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/annotations/testing/Foo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/annotations/testing/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/annotations/processing/AnnotProcessor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/annotations/processing/AnnotA.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -78,14 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/domaciukoly/STEST/Parsovac.java" />
-        <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/domaciukoly/STEST/test" />
-        <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/domaciukoly/STEST/stest.java" />
-        <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/prvni/semestr/domaciukoly/STEST/stest.java" />
-        <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/domaciukoly/STEST/stest.java" />
-        <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/zadani" />
-        <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Uloha.java" />
-        <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Operator.java" />
         <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/UnOperator.java" />
         <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/BinOperator.java" />
         <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Plus.java" />
@@ -129,6 +174,14 @@
         <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv01/ukol2textProcesor/main.java" />
         <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv01/ukol3rozsiritelnyShell/Command.java" />
         <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv01/ukol3rozsiritelnyShell/main.java" />
+        <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/annotations/testing/Foo.java" />
+        <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/annotations/processing/AnnotProcessor.java" />
+        <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv02/TesterInfo.java" />
+        <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/annotations/testing/Test.java" />
+        <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/annotations/testing/Main.java" />
+        <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv02/TestIinf.java" />
+        <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv02/SimpleTest.java" />
+        <option value="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv02/main.java" />
       </list>
     </option>
   </component>
@@ -143,6 +196,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -174,26 +228,91 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="semestr4" type="462c0819:PsiDirectoryNode" />
+              <item name="annotations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="semestr4" type="462c0819:PsiDirectoryNode" />
+              <item name="annotations" type="462c0819:PsiDirectoryNode" />
+              <item name="processing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="semestr4" type="462c0819:PsiDirectoryNode" />
+              <item name="annotations" type="462c0819:PsiDirectoryNode" />
+              <item name="testing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="semestr4" type="462c0819:PsiDirectoryNode" />
               <item name="cv01" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="semestr4" type="462c0819:PsiDirectoryNode" />
+              <item name="cv01" type="462c0819:PsiDirectoryNode" />
+              <item name="ukol1plugin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="semestr4" type="462c0819:PsiDirectoryNode" />
+              <item name="cv01" type="462c0819:PsiDirectoryNode" />
+              <item name="ukol2textProcesor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="semestr4" type="462c0819:PsiDirectoryNode" />
+              <item name="cv01" type="462c0819:PsiDirectoryNode" />
+              <item name="ukol3rozsiritelnyShell" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="semestr4" type="462c0819:PsiDirectoryNode" />
+              <item name="cv02" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550747200648" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="cz.cuni.mff.java.semestr4.annotations" />
       <recent name="cz.cuni.mff.java.semestr4" />
       <recent name="cz.cuni.mff.java" />
       <recent name="cz.cuni.mff.java.domaciukoly.nasobilka" />
@@ -215,7 +334,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.main (2)">
+  <component name="RunManager" selected="Application.main (3)">
     <configuration name="ImageDownloader" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cz.cuni.mff.java.cv11.ImageDownloader" />
       <module name="Java" />
@@ -231,11 +350,11 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cz.cuni.mff.java.semestr4.plugins.Main" />
+      <option name="MAIN_CLASS_NAME" value="cz.cuni.mff.java.semestr4.annotations.testing.Main" />
       <module name="Java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cz.cuni.mff.java.semestr4.plugins.*" />
+          <option name="PATTERN" value="cz.cuni.mff.java.semestr4.annotations.testing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -297,12 +416,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cz.cuni.mff.java.semestr4.cv01.ukol1plugin.main" />
+    <configuration name="main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cz.cuni.mff.java.semestr4.cv02.main" />
       <module name="Java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cz.cuni.mff.java.semestr4.cv01.ukol1plugin.*" />
+          <option name="PATTERN" value="cz.cuni.mff.java.semestr4.cv02.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -310,15 +429,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="mainT" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cz.cuni.mff.java.semestr4.cv01.ukol1plugin.mainT" />
+    <configuration name="SimpleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cz.cuni.mff.java.semestr4.cv01.ukol1plugin.*" />
+          <option name="PATTERN" value="cz.cuni.mff.java.semestr4.cv02.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="cz.cuni.mff.java.semestr4.cv02" />
+      <option name="MAIN_CLASS_NAME" value="cz.cuni.mff.java.semestr4.cv02.SimpleTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -327,19 +448,19 @@
       <item itemvalue="Application.ImageDownloader" />
       <item itemvalue="Application.bf" />
       <item itemvalue="Application.brfu" />
-      <item itemvalue="Application.Main" />
       <item itemvalue="Application.main (1)" />
-      <item itemvalue="Application.mainT" />
-      <item itemvalue="Application.main" />
       <item itemvalue="Application.main (2)" />
+      <item itemvalue="Application.main (3)" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.SimpleTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.main (3)" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.SimpleTest" />
         <item itemvalue="Application.main (2)" />
         <item itemvalue="Application.main (1)" />
-        <item itemvalue="Application.main" />
-        <item itemvalue="Application.mainT" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -366,9 +487,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="53" y="32" width="1867" height="1048" extended-state="6" />
+    <frame x="53" y="34" width="1867" height="1046" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49800798" visible="true" weight="0.222529" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49800798" visible="true" weight="0.23604201" />
       <window_info id="Structure" order="1" sideWeight="0.50199205" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -377,15 +498,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32867134" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23804227" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23766816" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5314685" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32867134" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32867134" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32847533" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32814237" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32735425" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49825174" weight="0.24939272" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -428,49 +549,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/domaciukoly/brainfuck/PosunVlevo.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/domaciukoly/brainfuck/PosunVpravo.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/domaciukoly/brainfuck/PravaZavorka.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="15" lean-forward="true" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/domaciukoly/brainfuck/Prikaz.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/domaciukoly/brainfuck/SnizHodnotu.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/domaciukoly/brainfuck/Vypis.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/domaciukoly/brainfuck/Zapis.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/domaciukoly/brainfuck/ZvysHodnotu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/domaciukoly/brainfuck/LevaZavorka.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/domaciukoly/brainfuck/brfu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="161" column="16" selection-start-line="161" selection-start-column="16" selection-end-line="161" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/io/FileInputStream.java" />
     <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/util/HashSet.java" />
     <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/domaciukoly/STEST/stest.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -704,33 +782,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv01/ukol1plugin/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv01/ukol1plugin/mainT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="27" column="17" lean-forward="true" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv01/ukol2textProcesor/TextProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Uloha.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -745,16 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv01/ukol2textProcesor/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="60" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv01/ukol3rozsiritelnyShell/Command.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -762,14 +803,139 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv01/ukol3rozsiritelnyShell/main.java">
+    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv01/ukol2textProcesor/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="88" column="25" lean-forward="true" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="25" />
+        <state relative-caret-position="360">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="33" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3451#3452#0" expanded="true" />
-            <element signature="e#3519#3520#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv01/ukol2textProcesor/TextProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv01/ukol1plugin/mainT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/annotations/processing/AnnotB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv01/ukol3rozsiritelnyShell/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="88" column="25" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv01/ukol1plugin/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/annotations/testing/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/annotations/processing/TestClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv02/TesterInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv02/TestIinf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/annotations/testing/Foo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/annotations/testing/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/annotations/processing/AnnotProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/annotations/processing/AnnotA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv02/SimpleTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1070#1071#0" expanded="true" />
+            <element signature="e#1093#1094#0" expanded="true" />
+            <element signature="e#1171#1172#0" expanded="true" />
+            <element signature="e#1198#1199#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv02/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="47" column="17" lean-forward="true" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
