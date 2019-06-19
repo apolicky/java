@@ -6,7 +6,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 */
-import cz.cuni.mff.java.semestr4.annotations.testing.Test;
 
 import java.util.ArrayList;
 import java.util.Collection;

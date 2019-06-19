@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="comms">
+    <output-path>$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv03</output-path>
+    <root id="archive" name="comms.jar">
+      <element id="file-copy" path="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv03/shellAndServiceLoader/C2.java" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv03/shellAndServiceLoader/C1.java" />
+      <element id="module-output" name="Java" />
+    </root>
+  </artifact>
+</component>

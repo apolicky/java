@@ -3,16 +3,18 @@ package cz.cuni.mff.java.semestr3.ZapoctovyProgram;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
+import java.util.regex.Pattern;
 
 public class Ulohovac {
 
     public static void main(String[] args){
 
-        /*
-        String zkouska = new String("hovno hovno hovinko [[v-0-30]] malinko");
-        String[] zkouska1 = zkouska.split("\\[\\[");
 
-        String[] zkouska2=zkouska1[1].split("\\]\\]");
+        String zkouska = new String("hovno hovno hovinko {{v:0:30:i}} malinko.");
+        String[] zkouska1 = zkouska.split("\\{\\{");
+
+        String[] zkouska2=zkouska1[1].split("\\}\\}");
 
         for(String s : zkouska1){
             //System.out.println(s);
@@ -20,16 +22,17 @@ public class Ulohovac {
         Random r = new Random();
         r.nextDouble();
         for(String s : zkouska2){
-            //System.out.println(r.nextInt(30));
+            System.out.println(r.nextInt(30));
         }
 
 
-        String vnitrekZavorek[] = zkouska.split("\\[\\[*\\]\\]");
+        Pattern vzorZavorek = Pattern.compile("\\{\\{*\\}\\}");
 
-        for (String s: vnitrekZavorek
-             ) {
+        String vnitrekZavorek[] = zkouska.split("\\{\\{*\\}\\}");
+
+        for (String s: zkouska2) {
             System.out.println(s);
-        }*/
+        }
 
         List<Promenna> promenne = new ArrayList<>();
         HashSet<Character> pouzitePromenne = new HashSet<>();

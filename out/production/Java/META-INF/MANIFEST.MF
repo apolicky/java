@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: cz.cuni.mff.java.semestr4.cv03.shellAndServiceLoader.
+ main
+
