@@ -1,4 +1,4 @@
-package cz.cuni.mff.java.semestr4.cv08;
+/*package cz.cuni.mff.java.semestr4.cv08;
 
 import org.jdom2.JDOMException;
 import org.jdom2.input.DOMBuilder;
@@ -44,7 +44,7 @@ public class DOM {
         }
         else{
             System.out.println("JDOM: "+jdom+" DOM: "+dom+"\nJDOM faster by: "+(dom-jdom));
-        }*/
+        }
 
     }
 
@@ -110,3 +110,4 @@ public class DOM {
     }
 
 }
+*/

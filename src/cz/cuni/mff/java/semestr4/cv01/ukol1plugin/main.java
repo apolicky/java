@@ -1,6 +1,6 @@
 package cz.cuni.mff.java.semestr4.cv01.ukol1plugin;
 
-import cz.cuni.mff.java.semestr4.plugins.Plugin;
+import cz.cuni.mff.java.semestr4.prednaska.plugins.Plugin;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
@@ -13,7 +13,7 @@ public class main {
     }
 
     static List loadPlugins(Class pluginInterface, String... pluginNames){
-        List<cz.cuni.mff.java.semestr4.plugins.Plugin> plugins = new ArrayList<>();
+        List<cz.cuni.mff.java.semestr4.prednaska.plugins.Plugin> plugins = new ArrayList<>();
 
         for(String name : pluginNames){
             try {

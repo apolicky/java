@@ -1,4 +1,4 @@
-package cz.cuni.mff.java.semestr4.domaciUkoly.jdom;
+/*package cz.cuni.mff.java.semestr4.domaciUkoly.jdom;
 
 import org.jdom2.*;
 import org.jdom2.Content;
@@ -24,19 +24,19 @@ public class jdom {
         idXsekce = new HashMap<>();
         poradi_sekce=0;
 
-        /*try(BufferedReader BR = new BufferedReader(new InputStreamReader(System.in))){
-            while(BR.readLine()!= null){
-
-            }
-        }
-        runJDOM("/home/adam/school/java/jdom_test");*/
+        //try(BufferedReader BR = new BufferedReader(new InputStreamReader(System.in))){
+        //   while(BR.readLine()!= null){
+        //
+        //    }
+        //}
+        //runJDOM("/home/adam/school/java/jdom_test");
         runJDOM();
 
-        /*
-        System.out.println("tituly");
-        for( String t : tituly){
-            System.out.println(t);
-        }*/
+
+        //System.out.println("tituly");
+        //for( String t : tituly){
+        //    System.out.println(t);
+        //}
 
         for (Sekce s : sections){
             for (Odkaz o : s.odkazy){
@@ -52,16 +52,16 @@ public class jdom {
             }
         }
 
-        /*
-        System.out.println("sekce a id");
-        for(Map.Entry<String,String> iXs : idXsekce.entrySet()){
-            System.out.println(iXs.getKey() + " <- id" +", sekce -> "+ iXs.getValue());
-        }*/
+
+        //System.out.println("sekce a id");
+        //for(Map.Entry<String,String> iXs : idXsekce.entrySet()){
+        //    System.out.println(iXs.getKey() + " <- id" +", sekce -> "+ iXs.getValue());
+        //}
 
     }
 
 
-    private static void runJDOM(/*String filename*/){
+    private static void runJDOM(){
         try(BufferedReader BR = new BufferedReader(new InputStreamReader(System.in))) {
 
             SAXBuilder saxBuilder = new SAXBuilder();
@@ -184,3 +184,4 @@ public class jdom {
         }
     }
 }
+*/
