@@ -4,5 +4,4 @@ B vzdálených {{ser:0:100:I}}
 km, jestliže vlak ze stanice A jel
 rychlostí {{vzdalenost1:60:100:I}} km/h a vlak ze stanice B rychlostí
 {{vzdalenost12:60:100:I}} km/h a ještě k tomu {{kosin:1:5:I}}?
-
-[[ cos( pi * kosin / 4) ]]
+[[ ser / ( vzdalenost1 + vzdalenost12 ) * cos( pi * kosin / 4) ]]
