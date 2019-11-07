@@ -8,6 +8,7 @@ public class Text extends TextPart{
         text = t;
     }
 
+    // returns value as a string
     @Override
     public String getTextValue() {
         return text;

@@ -3,15 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="44de570f-a98a-4d31-87cb-ca5d44844b49" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java/META-INF/Java.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ulohy/META-INF/ulohy.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ulohy/uloha1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ulohy/uloha2_1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ulohy/zkusebni.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testFile" beforeDir="false" afterPath="$PROJECT_DIR$/testFile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Text.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Text.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/TextPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/TextPart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Variable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Variable.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +64,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -300,33 +295,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Main.java</url>
-          <line>451</line>
+          <line>466</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Main.java</url>
-          <line>375</line>
+          <line>390</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Main.java</url>
-          <line>249</line>
+          <line>262</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Main.java</url>
-          <line>69</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Main.java</url>
-          <line>461</line>
+          <line>476</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Variable.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Main.java</url>
-          <line>146</line>
-          <option name="timeStamp" value="40" />
+          <line>250</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/cv07/extendedEd.java</url>
@@ -338,11 +333,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Main.java</url>
-          <line>459</line>
-          <properties class="cz.cuni.mff.java.semestr3.ZapoctovyProgram.Main" method="createTask">
+          <line>474</line>
+          <properties class="cz.cuni.mff.java.semestr3.ZapoctovyProgram.Main" method="createWordProblem">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr3/ZapoctovyProgram/Main.java</url>
+          <line>443</line>
+          <properties class="cz.cuni.mff.java.semestr3.ZapoctovyProgram.Main" method="applyBinaryOperator">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/cz/cuni/mff/java/semestr4/domaciUkoly/jdom/jdom.java</url>

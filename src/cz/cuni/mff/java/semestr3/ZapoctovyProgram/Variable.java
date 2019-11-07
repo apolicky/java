@@ -1,7 +1,6 @@
 package cz.cuni.mff.java.semestr3.ZapoctovyProgram;
 
 import java.util.Random;
-import java.util.regex.Matcher;
 
 public class Variable extends TextPart {
 
@@ -17,10 +16,11 @@ public class Variable extends TextPart {
         numberType = nT;
         random = new Random();
 
-        update();
+        generateNextValue();
     }
 
-    public void update(){
+    // generates new value of variable
+    public void generateNextValue(){
         switch (numberType){
             case INTEGER:
                 value = random.nextInt(Math.round(upperBound-lowerBound)) + Math.round(lowerBound);
@@ -34,10 +34,12 @@ public class Variable extends TextPart {
         }
     }
 
+    // returns name of variable
     public String getName(){
         return name;
     }
 
+    // returns value as a string
     @Override
     public String getTextValue() {
         switch (numberType){

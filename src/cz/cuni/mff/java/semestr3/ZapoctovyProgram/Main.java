@@ -7,70 +7,96 @@ import java.util.Stack;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 public class Main {
 
-    private static String resultPattern;
+    private static String resultExpressionPattern;
     private static List<TextPart> parsedText;
     private static List<Variable> variables;
 
-    private static String inputFilename, resultFilenamePrefix, resultFilename;
+    private static String inputFilename, studentWordProblemFilenamePrefix, resultFilename;
     private static int numberOfStudents;
 
     public static void main(String[] args) {
+        try(BufferedReader BR = new BufferedReader(new InputStreamReader(System.in))){
+            initializeVariables(); // initializes static variables
+            readCommandLineArguments(args); // reads command line arguments
 
-        initializeVariables();
-        readArguments(args);
-
-        readTask(inputFilename);
-
-        try(PrintWriter PWresult = new PrintWriter(resultFilename)) {
-
-
-            try(BufferedReader BR = new BufferedReader(new InputStreamReader(System.in))) {
-                if (numberOfStudents == -1) {
-                    System.out.println("Number of students not specified. Specify it, please:");
-                    numberOfStudents = Integer.parseInt(BR.readLine());
-                }
-
-                if(resultFilenamePrefix == null){
-                    System.out.println("Prefix of student tasks not specified. Specify it, please:");
-                    resultFilenamePrefix = BR.readLine();
-                }
+            // read word problem either from file or from console
+            if(inputFilename != null) {
+                readWordProblemFromFile(inputFilename);
             }
-            catch (IOException e) {
+            else{
+                readWordProblemFromConsole(BR);
+            }
+
+            // check if number of students is specified
+            if (numberOfStudents == -1) {
+                System.out.println("Number of students not specified. Specify it, please:");
+                numberOfStudents = Integer.parseInt(BR.readLine());
+            }
+
+            // check if prefix of files for students is specified
+            if(studentWordProblemFilenamePrefix == null){
+                System.out.println("Prefix of student tasks not specified. Specify it, please:");
+                studentWordProblemFilenamePrefix = BR.readLine();
+            }
+
+            // check if result pattern is specified
+            if (resultExpressionPattern != null) {
+                // result pattern might come from file, remove guide brackets
+                resultExpressionPattern = resultExpressionPattern.replace("[[", "").replace("]]", "");
+            }
+            else {
+                // if not, read it from console
+                readResultPatternFromConsole(BR);
+            }
+
+            if (resultFilename == null){
+                System.out.println("Filename with results of word problems not specified. Specify it, please:");
+                resultFilename = BR.readLine();
+            }
+
+            File resultsFile = createFile(resultFilename);
+            try(PrintWriter PWresult = new PrintWriter(resultsFile)) {
+
+                for(int i = 0; i < numberOfStudents; i++) {
+                    String resultPatternForCurrentStudent = substituteValuesOfVariables(resultExpressionPattern);
+
+                    String wordProblemForCurrentStudent = createWordProblem();
+
+                    // generate new values of variables to use for current student
+                    for (Variable v : variables) {
+                        v.generateNextValue();
+                    }
+
+                    // evaluate current word problem
+                    String evaluationOfCurrentWordProblem = Float.toString(evaluate(resultPatternForCurrentStudent));
+
+                    File currentStudentWordProblemFile = createFile(studentWordProblemFilenamePrefix + i);
+                    try(PrintWriter PWstudent = new PrintWriter(currentStudentWordProblemFile)){
+                        PWstudent.println(wordProblemForCurrentStudent);
+                    }
+
+                    PWresult.println(i + ":");
+                    PWresult.println(resultPatternForCurrentStudent + " ---> " + evaluationOfCurrentWordProblem);
+                    PWresult.flush();
+
+                }
+
+                System.out.println("Generating finished successfully.");
+
+            } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
 
-
-            for(int i = 0; i < numberOfStudents; i++) {
-                String resultForThisStudent = substituteValuesOfVariables(resultPattern);
-
-                String taskForThisStudent = createTask();
-
-                for (Variable v : variables) {
-                    v.update();
-                }
-
-                String evaluatedTask = Float.toString(evaluate(resultForThisStudent));
-
-                try(PrintWriter PWstudent = new PrintWriter(resultFilenamePrefix + i)){
-                    PWstudent.println(taskForThisStudent);
-                }
-
-                PWresult.println(i + ":");
-                PWresult.println(resultForThisStudent + " - " + evaluatedTask);
-                PWresult.flush();
-
-            }
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+        }catch(IOException e3){
+            e3.printStackTrace();
         }
-
-        System.out.println("end");
     }
 
-    private static void readTask(String filename) {
+    // reads problem from file, creates represenation of word problem in memory
+    private static void readWordProblemFromFile(String filename) throws IOException {
 
         try (BufferedReader BR = new BufferedReader(new FileReader(filename))) {
 
@@ -78,15 +104,16 @@ public class Main {
             while ((line = BR.readLine()) != null) {
                 line += "\n";
 
+                // check if line matches result pattern
                 if (line.matches("\\[\\[[^\\]]*\\]\\]\\s*")) {
-                    resultPattern = line;
+                    resultExpressionPattern = line;
                     break;
                 }
 
                 Pattern variablePattern = Pattern.compile("\\{\\{\\S+\\}\\}", 0);
                 Matcher variableMatcher = variablePattern.matcher(line);
 
-
+                // line split by guide brackets of variables
                 String[] starts = line.split(variablePattern.pattern());
 
                 int i = 0;
@@ -101,12 +128,13 @@ public class Main {
 
                     // parse important information
                     String innerPart = variableMatcher.group(0).replaceAll("\\{\\{", "").replaceAll("\\}\\}", "");
+                    String[] nameLBoundUBoundType = innerPart.split(":");
 
-                    n = innerPart.split(":")[0];
-                    lB = Float.parseFloat(innerPart.split(":")[1]);
-                    uB = Float.parseFloat(innerPart.split(":")[2]);
+                    n = nameLBoundUBoundType[0];
+                    lB = Float.parseFloat(nameLBoundUBoundType[1]);
+                    uB = Float.parseFloat(nameLBoundUBoundType[2]);
 
-                    switch (innerPart.split(":")[3]) {
+                    switch (nameLBoundUBoundType[3]) {
                         case "I":
                             nT = NumberType.INTEGER;
                             break;
@@ -115,7 +143,7 @@ public class Main {
                             break;
 
                         default:
-                            throw (new Error("wrong number type " + innerPart.split(":")[2]));
+                            throw (new Error("wrong number type " + nameLBoundUBoundType[3]));
                     }
 
                     // save variables and texts
@@ -132,130 +160,117 @@ public class Main {
                 }
 
             }
-
-            if (resultPattern != null) {
-                resultPattern = resultPattern.replace("[[", "").replace("]]", "");
-                System.out.println("res pattern: " + resultPattern);
-            }
-            else {
-                try(BufferedReader BR1 = new BufferedReader(new InputStreamReader(System.in))){
-                    System.out.println("Result pattern not specified, please insert it. Use the same variable names.");
-                    resultPattern = BR1.readLine();
-                }
-            }
-
-        } catch (FileNotFoundException e) {
-
-            e.printStackTrace();
-            System.out.println("Task filename was not specified, now you need to write the blocks of text in here.");
-            System.out.println("(If you have finished, write \":end\".)");
-
-            String line;
-
-            boolean readingVariable = false;
-
-            try(BufferedReader BR = new BufferedReader(new InputStreamReader(System.in))){
-                while(true) {
-                    if (readingVariable == true) {
-
-                        // variable
-                        String n; // name
-                        float uB, lB;   //upper bound, lower bound
-                        NumberType nT;  // number type
-
-                        System.out.println("Write the name of variable:");
-                        System.out.println("(If you have finished, write \":end\".)");
-                        if((line = BR.readLine()).equals(":end")){
-                            break;
-                        }
-                        else{
-                            n = line;
-
-                            System.out.println("Write the number type of variable: I (integer) / F (float)");
-                            line = BR.readLine();
-                            switch (line) {
-                                case "I":
-                                    nT = NumberType.INTEGER;
-                                    break;
-                                case "i":
-                                    nT = NumberType.INTEGER;
-                                    break;
-                                case "F":
-                                    nT = NumberType.FLOAT;
-                                    break;
-                                case "f":
-                                    nT = NumberType.FLOAT;
-                                    break;
-                                default:
-                                    throw new Error("Wrong number type selected");
-                            }
-
-                            System.out.println("Write the lower bound of variable:");
-                            lB = Float.parseFloat(BR.readLine());
-
-                            System.out.println("Write the upper bound of variable:");
-                            uB = Float.parseFloat(BR.readLine());
-
-                            // save variables and texts
-                            Variable v = new Variable(n, lB, uB, nT);
-
-                            parsedText.add(v);
-                            variables.add(v);
-
-                            readingVariable = false;
-                        }
-                    } else {
-                        System.out.println("Write the part of text until next variable:");
-                        System.out.println("(If you have finished, write \":end\".)");
-
-                        if ((line = BR.readLine()).equals(":end")) {
-                            break;
-                        }
-                        else {
-                            parsedText.add(new Text(line));
-
-                            readingVariable = true;
-                        }
-                    }
-                }
-
-                if(resultPattern == null){
-                    System.out.println("Result pattern not specified, please insert it. Use the same variable names.");
-                    resultPattern = BR.readLine();
-                }
-
-            }
-            catch(IOException e1){
-                e1.printStackTrace();
-            }
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
         }
 
     }
 
+    // reads word problem from console, creates its representation in memory
+    private static void readWordProblemFromConsole(BufferedReader IBR) throws IOException{
+        System.out.println("Task filename was not specified, now you need to write the blocks of text in here.");
+        System.out.println("(If you have finished, type in \":end\".)");
+
+        String line;
+
+        // indicator variable just to know what is being read
+        boolean readingVariable = false;
+
+        while(true) {
+            if (readingVariable == true) {
+
+                // variable
+                String n; // name
+                float uB, lB;   //upper bound, lower bound
+                NumberType nT;  // number type
+
+                System.out.println("Write the name of variable:");
+                System.out.println("(If you have finished, type in \":end\".)");
+                if((line = IBR.readLine()).equals(":end")){
+                    break;
+                }
+                else{
+                    n = line;
+
+                    System.out.println("Write the number type of variable: I (integer) / F (float)");
+                    line = IBR.readLine();
+                    switch (line) {
+                        case "I":
+                            nT = NumberType.INTEGER;
+                            break;
+                        case "i":
+                            nT = NumberType.INTEGER;
+                            break;
+                        case "F":
+                            nT = NumberType.FLOAT;
+                            break;
+                        case "f":
+                            nT = NumberType.FLOAT;
+                            break;
+                        default:
+                            throw new Error("Wrong number type selected");
+                    }
+
+                    System.out.println("Write the lower bound of variable:");
+                    lB = Float.parseFloat(IBR.readLine());
+
+                    System.out.println("Write the upper bound of variable:");
+                    uB = Float.parseFloat(IBR.readLine());
+
+                    // save variables and texts
+                    Variable v = new Variable(n, lB, uB, nT);
+
+                    parsedText.add(v);
+                    variables.add(v);
+
+                    readingVariable = false;
+                }
+            } else {
+                System.out.println("Write the part of text until next variable:");
+                System.out.println("(If you have finished, type in \":end\".)");
+
+                if ((line = IBR.readLine()).equals(":end")) {
+                    break;
+                }
+                else {
+                    parsedText.add(new Text(line));
+
+                    readingVariable = true;
+                }
+            }
+        }
+    }
+
+    // reads result pattern from console
+    private static void readResultPatternFromConsole(BufferedReader BR) throws IOException {
+        System.out.println("Result pattern not specified, please insert it. Use the same variable names.");
+        resultExpressionPattern = BR.readLine();
+    }
+
+    // evaluate the expression - result pattern with values substituted
     private static float evaluate(String infixExpression) {
+
         char[] tokens = infixExpression.toCharArray();
 
         Stack<Float> values = new Stack<Float>();
         Stack<Operator> operators = new Stack<Operator>();
 
+        // parse tokens
         for (int i = 0; i < tokens.length; i++) {
             // Current token is a whitespace, skip it
-            if (tokens[i] == ' ')
+            if (tokens[i] == ' ') {
                 continue;
+            }
 
-            if (Character.isAlphabetic(tokens[i])){
+            if (Character.isAlphabetic(tokens[i])) {
                 StringBuilder SB = new StringBuilder();
 
+                // read the whole word
                 while (i < tokens.length && Character.isAlphabetic(tokens[i])) {
                     SB.append(tokens[i]);
                     i++;
                 }
 
-                switch (SB.toString()){
+                // check if we know this word
+                switch (SB.toString()) {
                     case "pi":
                         values.push((float) Math.PI);
                         break;
@@ -281,77 +296,77 @@ public class Main {
                         operators.push(Operator.ARCTG);
                         break;
 
-                        default:
-                            throw new Error("Unsupported function " + SB.toString());
+                    default:
+                        throw new Error("Unsupported function " + SB.toString());
                 }
             }
+            // check if number is being read
             else if (tokens[i] >= '0' && tokens[i] <= '9') {
                 StringBuilder SB = new StringBuilder();
 
+                // read the whole number
                 int numberOfPoints = 0;
-                while (i < tokens.length && ((tokens[i] >= '0' && tokens[i] <= '9') || tokens[i] == '.' ) && numberOfPoints <= 1) {
+                while (i < tokens.length && ((tokens[i] >= '0' && tokens[i] <= '9') || tokens[i] == '.') && numberOfPoints <= 1) {
                     SB.append(tokens[i]);
-                    if(tokens[i] == '.'){
+                    if (tokens[i] == '.') {
                         numberOfPoints++;
                     }
                     i++;
                 }
-                values.push(Float.parseFloat(SB.toString()));
+                values.push(Float.parseFloat(SB.toString())); // save the number
             }
 
-            // Current token is an opening brace, push it to 'ops'
-            if (tokens[i] == '(')
-                operators.push(Operator.LPARENTH);
+            // do this part only if the expression continues
+            if (i < tokens.length) {
 
-                // Closing brace encountered, solve entire brace
-            else if (tokens[i] == ')') {
-                while (operators.peek() != Operator.LPARENTH)
-                    values.push(applyBinaryOperator(operators.pop(), values.pop(), values.pop()));
-                operators.pop(); // Pop left bracket
-            }
+                // current token is an opening bracket, push it to operators
+                if (tokens[i] == '(')
+                    operators.push(Operator.LPARENTH);
 
-            // Current token is an operator.
-            else if (tokens[i] == '+' || tokens[i] == '-' ||
-                    tokens[i] == '*' || tokens[i] == '/' || tokens[i] == '^') {
+                    // closing bracket, solve the inner part of brackets
+                else if (tokens[i] == ')') {
+                    while (operators.peek() != Operator.LPARENTH)
+                        values.push(applyBinaryOperator(operators.pop(), values.pop(), values.pop()));
+                    operators.pop(); // pop left bracket
+                } else if (tokens[i] == '+' || tokens[i] == '-' ||
+                        tokens[i] == '*' || tokens[i] == '/' || tokens[i] == '^') {
 
-                Operator op;
+                    Operator op;
 
-                switch (tokens[i]){
-                    case '+':
-                        op = Operator.PLUS;
-                        break;
-                    case '-':
-                        op = Operator.MINUS;
-                        break;
-                    case '*':
-                        op = Operator.TIMES;
-                        break;
-                    case '/':
-                        op = Operator.DIV;
-                        break;
-                    case '^':
-                        op = Operator.POW;
-                        break;
+                    switch (tokens[i]) {
+                        case '+':
+                            op = Operator.PLUS;
+                            break;
+                        case '-':
+                            op = Operator.MINUS;
+                            break;
+                        case '*':
+                            op = Operator.TIMES;
+                            break;
+                        case '/':
+                            op = Operator.DIV;
+                            break;
+                        case '^':
+                            op = Operator.POW;
+                            break;
 
                         default:
                             throw new Error("Unsupported operator " + tokens[i]);
 
+                    }
+
+                    // evaluate part with higher priority
+                    while (!operators.empty() && hasLowerPriorityThanTopOfStack(op, operators.peek())) {
+                        values.push(applyBinaryOperator(operators.pop(), values.pop(), values.pop()));
+                    }
+
+                    // push current token to operators
+                    operators.push(op);
                 }
-
-                // While top of 'ops' has same or greater precedence to current
-                // token, which is an operator, apply operator on top of 'ops'
-                // to top two elements in values stack
-
-                while (!operators.empty() && hasGreaterPriorityThanTopOfStack(op, operators.peek()))
-                    values.push(applyBinaryOperator(operators.pop(), values.pop(), values.pop()));
-
-                // Push current token to 'ops'.
-                operators.push(op);
             }
         }
-
-        // Entire expression has been parsed at this point, apply remaining
-        // ops to remaining values
+        // entire expression is parsed at this point, apply remaining
+        // operators to values
         while (!operators.empty())
             if (isBinary(operators.peek())){
                 values.push(applyBinaryOperator(operators.pop(), values.pop(), values.pop()));
@@ -362,17 +377,17 @@ public class Main {
 
 
         if(values.size() == 1){
-            return values.pop(); // navrchu zasobniku hodnot je vysledek.
+            return values.pop(); // there is the result on top of values stack
         }
         else{
-            throw new Error("values stack has more than one value, supposably missing an operator.");
+            throw new Error("value stack has more than one value, supposably missing an operator.");
         }
 
     }
 
-    // je pravda, kdyz 'topOfStack' ma aspon takovou prioritu jako 'newOp',
-    // jinak je nepravda.
-    private static boolean hasGreaterPriorityThanTopOfStack(Operator newOp, Operator topOfStack) {
+    // true if topOfStack lower priority as newOp, else false
+    // priority descending: (,) ; ^ ; *,/ ; +,-
+    private static boolean hasLowerPriorityThanTopOfStack(Operator newOp, Operator topOfStack) {
         if (topOfStack == Operator.LPARENTH || topOfStack == Operator.RPARENTH) {
             return false;
         }
@@ -388,7 +403,7 @@ public class Main {
         }
     }
 
-    // je operator 'op' binarni
+    // returns true if operator op is binary
     private static boolean isBinary(Operator op){
         if (op == Operator.PLUS ||
             op == Operator.MINUS ||
@@ -402,7 +417,7 @@ public class Main {
         }
     }
 
-    // aplikuj unarni operator 'op' na hodnotu 'a'
+    // applies unary operator to number a
     private static float applyUnaryOperator(Operator op, float a){
         switch (op){
             case SIN:
@@ -425,7 +440,7 @@ public class Main {
         }
     }
 
-    // aplikuj binarni operator 'op' na hodnoty 'a' a 'b'
+    // applies binary operator op on numbers a and b -> a `op` b
     private static float applyBinaryOperator(Operator op, float b, float a) {
         switch (op) {
             case PLUS:
@@ -445,19 +460,19 @@ public class Main {
         return 0;
     }
 
-    // dosad hodnoty podle zadani do vzorce
+    // substitutes values of variables in result expression
     private static String substituteValuesOfVariables(String input){
 
-        String output = new String(input);  // bal jsem se, aby to nebyla reference na puvodni
+        String outputExpression = new String(input);  // bal jsem se, aby to nebyla reference na puvodni
         for(Variable v : variables){
-            output = output.replaceAll("\\s*" + v.getName() + "\\W"," " + v.getTextValue() + " ");
+            outputExpression = outputExpression.replaceAll("\\s*" + v.getName() + "\\W"," " + v.getTextValue() + " ");
         }
 
-        return output;
+        return outputExpression;
     }
 
-    // vytvor zadani pro studenta
-    private static String createTask(){
+    // creates word problem for student
+    private static String createWordProblem(){
 
         StringBuilder SB = new StringBuilder();
         for(TextPart tP : parsedText){
@@ -466,30 +481,17 @@ public class Main {
         return SB.toString();
     }
 
-    public static File createFile(String fileName){
-        File file = new File(fileName);
-        if(!file.exists()){
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-                System.out.println("File " + fileName + " could not be created.");
-            }
-        }
-        return file;
-    }
-
+    // initializes static variables
     private static void initializeVariables(){
-        resultPattern = resultFilenamePrefix = inputFilename = null;
-        numberOfStudents = -1;
-        resultFilename = "./vysledky.txt";
+        resultExpressionPattern = studentWordProblemFilenamePrefix = inputFilename = resultFilename = null;
+        numberOfStudents = -1; // number of students wasn't assigned yet
 
         parsedText = new ArrayList<TextPart>();
         variables = new ArrayList<Variable>();
-
     }
 
-    private static void readArguments(String[] args){
+    // reads command-line arguments
+    private static void readCommandLineArguments(String[] args){
 
         for(int i = 0; i < args.length; i++){
             switch (args[i]){
@@ -507,17 +509,59 @@ public class Main {
                     break;
                 case "-p":
                     i++;
-                    resultFilenamePrefix = args[i];
+                    studentWordProblemFilenamePrefix = args[i];
                     break;
                 case "-e":
                     i++;
-                    resultPattern = args[i];
+                    resultExpressionPattern = args[i];
+                    break;
+                case "-h":
+                    printHelp();
+                    System.exit(1);
+                    break;
+                case "--help":
+                    printHelp();
+                    System.exit(1);
                     break;
                 default:
                     throw new Error("Unsupported option :" + args[i]);
             }
         }
     }
+
+    // prints help
+    private static void printHelp(){
+        System.out.println("Usage: WPGenerator [options]\n" +
+                "Options:\n" +
+                "-f name_of_file_with_word_problem\n" +
+                "       contains text of word problem. In places, where variables are,\n" +
+                "       is written \n" +
+                "       {{ variable_name : lower_bound : upper_bound : number_type [I/F] }}.\n" +
+                "       Pattern of result expression can be specified on a single line like\n" +
+                "       [[5*x^2-13*(7/(9*y))+17*2]] -- do not use numbers in variable names.\n\n" +
+                "-s number_of_students\n\n" +
+                "-o name_of_file_with_results\n\n" +
+                "-p prefix_of_filenames_containing_word_problems\n\n" +
+                "-e infix_expression_of_result\n" +
+                "       use the same names of variables.\n\n" +
+                "-h/--help\n" +
+                "       prints this help.");
+    }
+
+    // creates a file for fileName
+    public static File createFile(String fileName){
+        File file = new File(fileName);
+        if(!file.exists()){
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.out.println("File " + fileName + " could not be created.");
+            }
+        }
+        return file;
+    }
+
 }
 
 
